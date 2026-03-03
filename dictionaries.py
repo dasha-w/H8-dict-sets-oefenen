@@ -25,11 +25,15 @@ print(fruit['banaan'])  # Het resultaat is: geel
 # Verwachte uitkomst: 2
 #
 # Opdracht 1b:
-# Gebruik de get() methode op de waarde 'Appels' en 'Bananen'. Zorg dat als de naam niet bestaat, de tekst 'Niet gevonden' wordt geprint.
+# Gebruik de get() methode op de waarde 'Appels' en 'Bananen'. Zorg dat als de naam niet bestaat,
+# de tekst 'Niet gevonden' wordt geprint.
 # ==========================================
-
+#1a
 boodschappen = {'Appels': 6, 'Brood': 2}
-
+print(boodschappen['Brood'])
+#1b
+print(boodschappen.get('Bananen', 'Niet gevonden'))
+print(boodschappen.get('Appels', "Niet gevonden"))
 
 # ==========================================
 # Opdracht 2:
@@ -51,6 +55,21 @@ boodschappenlijst_raj = {'Brood': 1, 'Appels': 6}
 boodschappenlijst_jan = {'Appels': 6, 'Brood': 1}
 boodschappenlijst_karel = {'Appels': 6, 'Brood': 25}
 
+#2a
+print("---------------------")
+if boodschappenlijst_marie == boodschappenlijst_raj:
+    print("De Boodschappenlijstjes zijn gelijk.")
+else: print("De boodschappenlijstjes zijn NIET gelijk.")
+
+#2b
+if boodschappenlijst_marie == boodschappenlijst_raj == boodschappenlijst_jan:
+    print("De Boodschappenlijstjes zijn gelijk.")
+else: print("De boodschappenlijstjes zijn NIET gelijk.")
+
+#2c
+if boodschappenlijst_marie == boodschappenlijst_raj == boodschappenlijst_jan == boodschappenlijst_karel:
+    print("De Boodschappenlijstjes zijn gelijk.")
+else: print("De boodschappenlijstjes zijn NIET gelijk.")
 
 # ==========================================
 # Opdracht 2:
@@ -63,16 +82,31 @@ boodschappenlijst_karel = {'Appels': 6, 'Brood': 25}
 # Verwachte uitkomst: {'banken': 4, 'stoelen': 20}
 
 # Opdracht 2b:
-# Er komen klachten dat klanten door eerder gekochte stoelen zijn gezakt. De winkel besluit om de stoelen uit het assortiment te halen.
+# Er komen klachten dat klanten door eerder gekochte stoelen zijn gezakt. De winkel besluit om de stoelen uit het assortiment
+# te halen.
 # Verwijder de naam 'stoelen' (en daarmee ook de bijbehorende value) uit de dictionary en print de aangepaste dictionary.
 # Verwachte uitkomst: {'banken': 4}
 
 # Opdracht 2c:
-# De winkel gaat tafels verkopen en koopt er gelijk 15 in. Voeg de naam 'tafels' toe met een waarde van 15 en print de aangepaste dictionary.
+# De winkel gaat tafels verkopen en koopt er gelijk 15 in. Voeg de naam 'tafels' toe met een waarde van 15 en print de
+# aangepaste dictionary.
 # Verwachte uitkomst: {'banken': 4, 'tafels': 15}
 # ==========================================
 
 meubels = {'banken': 10, 'stoelen': 20}
+
+print('-----------------')
+#2a
+meubels['banken'] -= 6
+print(meubels)
+
+#2b
+del meubels['stoelen']
+print(meubels)
+
+#2c
+meubels.update(tafels = 15)
+print(meubels)
 
 
 # ==========================================
@@ -88,10 +122,21 @@ meubels = {'banken': 10, 'stoelen': 20}
 
 cijfers = {'Jaap': 3, 'Winnie': 4, 'Jeroen': 9, 'Lana': 10}
 
+print('---------------------')
+
+for student, cijfer in cijfers.items():
+    if cijfer *1.5 > 10:
+        cijfers[student] = 10
+    else:
+        cijfers[student] = cijfer * 1.5
+
+print(cijfers)
+
 
 # ==========================================
 # Opdracht 4:
-# De eigenaar van dierentuin 'Het Zootje' heeft een lijst met dieren en hun aantallen. De dieren en hun aantallen zijn opgeslagen in een dictionary.
+# De eigenaar van dierentuin 'Het Zootje' heeft een lijst met dieren en hun aantallen. De dieren en hun aantallen zijn
+# opgeslagen in een dictionary.
 # Maak onderstaande deelopdrachten.
 #
 # Opdracht 4a:
@@ -99,7 +144,13 @@ cijfers = {'Jaap': 3, 'Winnie': 4, 'Jeroen': 9, 'Lana': 10}
 # Verwachte uitkomst: {'Aap': 5, 'Giraffe': 2, 'Leeuw': 3, 'Olifant': 4, 'Zebra': 1}
 #
 # Opdracht 4b:
-# Nu wil de eigenaar in een oogopslag wat het hoogste aantal is en het laagste. Sorteer nu de aantallen van hoog naar laag en print de dictionary uit. (De keys hoef je niet te printen)
+# Nu wil de eigenaar in een oogopslag wat het hoogste aantal is en het laagste. Sorteer nu de aantallen van hoog naar
+# laag en print de dictionary uit. (De keys hoef je niet te printen)
 # ==========================================
 
 dieren = {'Olifant': 5, 'Zebra': 8, 'Aap': 12, 'Giraffe': 3, 'Neushoorn': 7}
+
+print('-----------')
+#4a
+print(dict(sorted(dieren.items())))
+
